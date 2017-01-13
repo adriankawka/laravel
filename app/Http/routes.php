@@ -23,13 +23,15 @@
 Route::get('/', function () {
     return view('index');
 });
-Route::get('nav', function () {
-    return view('partials.nav');
+Route::get('/products', function () {
+    return view('products.product');
 });
-Route::get('/index', function () {
-    return view('/');
+Route::get('/aboutus', function () {
+    return view('aboutus');
 });
-
+Route::get('/admin', function () {
+    return view('admin.admin');
+});
 // ALL AUTHENTICATION ROUTES - HANDLED IN THE CONTROLLERS
 Route::controllers([
 	'auth' 		=> 'Auth\AuthController',
@@ -128,20 +130,17 @@ Route::group(['middleware' => 'editor'], function () {
 	});
 
 });
-Route::get('/login-influencer', function () {
-    return view('auth.login-influencer');
+Route::get('/sign in', function () {
+    return view('auth.login');
 });
 
-Route::get('/login-advertiser', function () {
-    return view('auth.login-advertiser');
+// Route::get('/login-advertiser', function () {
+//     return view('auth.login-advertiser');
+// });
+Route::get('/sign up', function () {
+    return view('auth.register');
 });
-Route::get('/signup-influencer', function () {
-    return view('auth.signup-influencer');
-});
-Route::get('/signup-advertiser', function () {
-    return view('auth.signup-advertiser');
-});
-
+// f
 //***************************************************************************************//
 //***************************** USER ROUTING EXAMPLES BELOW *****************************//
 //***************************************************************************************//

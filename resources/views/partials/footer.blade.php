@@ -1,57 +1,21 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>INFLUINDEX | A DATA DRIVEN APPROACH TO INFLUENCER DISOVERY</title>
-        <meta name="viewport" content="width=device-width, initial-scale=0.9">
-        <link href="../webfont/stylesheet.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/themify-icons.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/flexslider.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/lightbox.min.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/ytplayer.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/theme.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="../css/custom.css" rel="stylesheet" type="text/css" media="all" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
-    </head>
-    <body>
-         <footer class="footer-1 bg-dark">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                            <img alt="INFLUINDEX" src="../img/logo-footer.png" />
-                            <div class="widget pt32">
-                                <p style="text-transform:uppercase;letter-spacing:2px">Jl. Kemang Timur Raya No. 100E,<br>
-                                Jakarta 12730  Indonesia<br>
-                                Phone: +62 21 7179 1949 <br>  
-                                Email: <a href="mailto:info@influindex.co.id" target="_blank">info@influindex.co.id</a>
-                                                                
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6">
-                            <img alt="FOLLOW US" src="../img/followus.png" />
-                            <div class="widget pt32">
-                                <ul class="lead social">
-                                    <li><a href="#"><i class="ti-facebook"></i> <span>@INFLUINDEX</span></a></li>
-                                    <li><a href="#"><i class="ti-instagram"></i> <span>@INFLUINDEX</span></a> </li>
-                                    <li><a href="#"><i class="ti-twitter-alt"></i> <span>@INFLUINDEX</span></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        
+    <bofkdy>
+      <!--   <div class="footer_bottom_sec">
+            <div class="container">
+                <div class="row">
+                  <div class="col-sm-9 col-lg-10 col-xs-12">
+                    <div class="footer_left_copyright">
+                      <p>Copyright © Spotlight Portfolio. All Rights Reserved. <span><a href="policy.html">Privacy.</a> <a href="terms.html">Term of Usage.</a> <a href="usage.html">Acceptable Usage.</a></span></p>
                     </div>
-                    <!--end of row-->
-                    <div class="row">
-                        <div class="col-sm-12 text-left">
-                            <span class="sub">&copy; 2016 | INFLUINDEX</span>
-                        </div>
-                        
-                    </div>
+                  </div>
+                  <div class="col-sm-3 col-lg-2 col-xs-12">
+                    <div class="footer_right_btn pull-right"><a href="contact.html" class="btn btn-default nop">CONTACT US</a></div>
+                  </div>
                 </div>
-                <!--end of container-->
-                <a class="btn btn-sm fade-half back-to-top inner-link" href="#top">Top</a>
-            </footer>
-        </div>
+            </div>
+        </div>  -->
+      
         <script src="../js/jquery.min.js"></script>
         <script src="../js/bootstrap.min.js"></script>
         
@@ -65,5 +29,23 @@
         <script src="../js/smooth-scroll.min.js"></script>
         <script src="../js/parallax.js"></script>
         <script src="../js/scripts.js"></script>
+
+         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> --> 
+<!--         // <script src="js/jquery-1.11.3.min.js"></script> -->
+       <script src="../js/autosearh.js"></script>
+        <script src="../js/owl.carousel.js"></script> 
+        <script src="../js/main.js"></script> 
+
+        <script src="../js/plugins/metisMenu/jquery.metisMenu.js"></script>
+        <script src="../js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="../js/plugins/dataTables/datatables.min.js"></script>
+
+        <!-- Custom and plugin javascript -->
+        <script src="../js/inspinia.js"></script>
+        <script src="../js/plugins/pace/pace.min.js"></script>
+
+        <script src="../js/jssor.slider-21.1.6.mini.js" type="text/javascript"></script>
+
+
     </body>
 </html>

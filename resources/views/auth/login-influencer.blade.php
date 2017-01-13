@@ -5,35 +5,34 @@
 @endsection
 @section('content')
             
-            <div class="main-container">
-                <section class="pt-sm-16 pb-sm-16 pt-xs-16 pb-xs-16">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-6 col-sm-6 text-left mb-xs-24">
-                                <h1 class="color-green">Register<br> as Influencer</h1>
-                                <img alt="Register as Influencer" src="img/register-influencer.png">
+  <div class="middle-box text-center loginscreen animated fadeInDown">
+    <div>
+        <div>
+            <h1 class="logo-name">IN+</h1>
+        </div>
+            <h3>Welcome to IN+</h3>
+            <p>Perfectly designed and precisely prepared admin theme with over 50 pages with extra new web app views.
+                <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
+            </p>
+            <p>Login in. To see it in action.</p>
+                <div class="panel-body">
+                    @if (count($errors) > 0)
+                        <div class="alert alert-danger">
+                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                            <div class="form-group">
+                                 <strong>{{ Lang::get('auth.whoops') }}</strong> {{ Lang::get('auth.someProblems') }}<br /><br />
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                    <li>{!! HTML::link(url('/password/email'), Lang::get('auth.forgot_message'), array('id' => 'forgot_message',)) !!}</li>
+                                </ul>
+
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <h3>Log In</h3>
-                                <div class="panel-body">
-
-                                    @if (count($errors) > 0)
-                                        <div class="alert alert-danger">
-                                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                                            <div class="form-group">
-                                                 <strong>{{ Lang::get('auth.whoops') }}</strong> {{ Lang::get('auth.someProblems') }}<br /><br />
-                                                <ul>
-                                                    @foreach ($errors->all() as $error)
-                                                    <li>{{ $error }}</li>
-                                                    @endforeach
-                                                    <li>{!! HTML::link(url('/password/email'), Lang::get('auth.forgot_message'), array('id' => 'forgot_message',)) !!}</li>
-                                                </ul>
-
-                                            </div>
-                                        </div>
-                                
-                                    @endif
-                                </div>
+                        </div>
+                
+                    @endif
+                </div>
                                 {!! Form::open(array('url' => 'auth/login', 'method' => 'POST', 'class' => 'lockscreen-credentials form-horizontal', 'role' => 'form')) !!}
                                 <div class="form-group has-feedback">
                                     {!! Form::label('email', Lang::get('auth.email') , array('class' => 'col-sm-4 control-label')); !!}
