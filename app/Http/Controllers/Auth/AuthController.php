@@ -160,7 +160,7 @@ class AuthController extends Controller {
 
 		if($user->accountIsActive($code)) {
 
-			\Session::flash('message', \Lang::get('auth.successActivated') );
+			// \Session::flash('message', \Lang::get('auth.successActivated') );
 			return redirect('home');
 		}
 

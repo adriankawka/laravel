@@ -15,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('pages.home');
+        return view('admin.admin');
     }
 
     public function getHome()

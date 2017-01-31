@@ -5,72 +5,7 @@
 @endsection
 
 @section('content')
-   <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            var jssor_1_SlideshowTransitions = [
-              {$Duration:1200,x:0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:-0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:-0.3,$During:{$Left:[0.3,0.7]},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,$SlideOut:true,$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:-0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:-0.3,$During:{$Top:[0.3,0.7]},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:0.3,$SlideOut:true,$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,$Cols:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:0.3,$Rows:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:0.3,$Cols:2,$During:{$Top:[0.3,0.7]},$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,y:-0.3,$Cols:2,$SlideOut:true,$ChessMode:{$Column:12},$Easing:{$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,$Rows:2,$During:{$Left:[0.3,0.7]},$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:-0.3,$Rows:2,$SlideOut:true,$ChessMode:{$Row:3},$Easing:{$Left:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,x:0.3,y:0.3,$Cols:2,$Rows:2,$During:{$Left:[0.3,0.7],$Top:[0.3,0.7]},$SlideOut:true,$ChessMode:{$Column:3,$Row:12},$Easing:{$Left:$Jease$.$InCubic,$Top:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,$Delay:20,$Clip:3,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,$Delay:20,$Clip:3,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,$Delay:20,$Clip:12,$Assembly:260,$Easing:{$Clip:$Jease$.$InCubic,$Opacity:$Jease$.$Linear},$Opacity:2},
-              {$Duration:1200,$Delay:20,$Clip:12,$SlideOut:true,$Assembly:260,$Easing:{$Clip:$Jease$.$OutCubic,$Opacity:$Jease$.$Linear},$Opacity:2}
-            ];
-            var jssor_1_options = {
-              $AutoPlay: true,
-              $SlideshowOptions: {
-                $Class: $JssorSlideshowRunner$,
-                $Transitions: jssor_1_SlideshowTransitions,
-                $TransitionsOrder: 1
-              },
-              $ArrowNavigatorOptions: {
-                $Class: $JssorArrowNavigator$
-              },
-              $ThumbnailNavigatorOptions: {
-                $Class: $JssorThumbnailNavigator$,
-                $Cols: 10,
-                $SpacingX: 8,
-                $SpacingY: 8,
-                $Align: 360
-              }
-            };
-
-            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
-
-            /*responsive code begin*/
-            /*you can remove responsive code if you don't want the slider scales while window resizing*/
-            function ScaleSlider() {
-                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
-                if (refSize) {
-                    refSize = Math.min(refSize, 800);
-                    jssor_1_slider.$ScaleWidth(refSize);
-                }
-                else {
-                    window.setTimeout(ScaleSlider, 30);
-                }
-            }
-            ScaleSlider();
-            $(window).bind("load", ScaleSlider);
-            $(window).bind("resize", ScaleSlider);
-            $(window).bind("orientationchange", ScaleSlider);
-            /*responsive code end*/
-        });
-    </script>
+   
     <style>
         /* jssor slider arrow navigator skin 05 css */
         /*
@@ -103,56 +38,25 @@
         .jssora05r.jssora05rds { background-position: -70px -40px; opacity: .3; pointer-events: none; }
         /* jssor slider thumbnail navigator skin 01 css *//*.jssort01 .p            (normal).jssort01 .p:hover      (normal mouseover).jssort01 .p.pav        (active).jssort01 .p.pdn        (mousedown)*/.jssort01 .p {    position: absolute;    top: 0;    left: 0;    width: 72px;    height: 72px;}.jssort01 .t {    position: absolute;    top: 0;    left: 0;    width: 100%;    height: 100%;    border: none;}.jssort01 .w {    position: absolute;    top: 0px;    left: 0px;    width: 100%;    height: 100%;}.jssort01 .c {    position: absolute;    top: 0px;    left: 0px;    width: 68px;    height: 68px;    border: #000 2px solid;    box-sizing: content-box;    background: url('img/t01.png') -800px -800px no-repeat;    _background: none;}.jssort01 .pav .c {    top: 2px;    _top: 0px;    left: 2px;    _left: 0px;    width: 68px;    height: 68px;    border: #000 0px solid;    _border: #fff 2px solid;    background-position: 50% 50%;}.jssort01 .p:hover .c {    top: 0px;    left: 0px;    width: 70px;    height: 70px;    border: #fff 1px solid;    background-position: 50% 50%;}.jssort01 .p.pdn .c {    background-position: 50% 50%;    width: 68px;    height: 68px;    border: #000 2px solid;}* html .jssort01 .c, * html .jssort01 .pdn .c, * html .jssort01 .pav .c {    /* ie quirks mode adjust */    width /**/: 72px;    height /**/: 72px;}
     
-    i.fa.fa-angle-left {
-    color: #fff;
-    font-size: 32px;
-    line-height: 83px;
-    text-align: center;
-    display: block;
-}
-    
-    i.fa.fa-angle-right {
-    color: #fff;
-    font-size: 36px;
-    text-align: center;
-    line-height: 93px;
-    display: block;
-}
-
-    
-    .jssort01, .jssort01 > div {
-    width: 751px !important;
-}
-
-    </style>
-
-
-
-
-<!-- Owl Carousel css start-->
-
-<!-- Owl Carousel css end-->
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-      <![endif]-->
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-85604899-1', 'auto');
-  ga('send', 'pageview');
-</script>
-  
-  
-
-  
-  <!--modal popup-->
+          i.fa.fa-angle-left {
+          color: #fff;
+          font-size: 32px;
+          line-height: 83px;
+          text-align: center;
+          display: block;
+      }
+          
+          i.fa.fa-angle-right {
+          color: #fff;
+          font-size: 36px;
+          text-align: center;
+          line-height: 93px;
+          display: block;
+      }
+          .jssort01, .jssort01 > div {
+          width: 751px !important;
+      }
+          </style>
    <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
     
@@ -160,16 +64,14 @@
       <div class="modal-content">
         
         <div class="modal-body">
-      <span data-dismiss="modal">&times;</span>
-          <img src="demo" id="replaceImg" alt="image"/>
-        </div>
+          <span data-dismiss="modal">&times;</span>
+          <img src="demo" id="replaceImg" alt="image"/>                                                                                                                                                                                                                                                        
+        </div>  
       
       </div>
       
     </div>
   </div>
-  
-  
   <div class="overly">
     <div id="header">
       <div class="box">
@@ -180,127 +82,124 @@
           <li>$GBP</li>
         </ul>
       </div>
-      <div class="box"><img alt="" src="images/closed.png" class="closed-sidebar"></div>
+      <div class="box"><img alt="" src="../images/closed.png" class="closed-sidebar"></div>
       <div class="box">
       <button id="two">ENG</button>
         <ul class="language">
           <li>Afrikaans</li>
-<li>Albanian</li>
-<li>Amharic</li>
-<li>Arabic</li>
-<li>Armenian</li>
-<li>Azerbaijani</li>
-<li>Basque</li>
-<li>Belarusian</li>
-<li>Bengali</li>
-<li>Bosnian</li>
-<li>Bulgarian</li>
-<li>Catalan</li>
-<li>Cebuano</li>
-<li>Chichewa</li>
-<li>Chinese</li>
-<li>Corsican</li>
-<li>Croatian</li>
-<li>Czech</li>
-<li>Danish</li>
-<li>Dutch</li>
-<li>English</li>
-<li>Esperanto</li>
-<li>Estonian</li>
-<li>Filipino</li>
-<li>Finnish</li>
-<li>French</li>
-<li>Frisian</li>
-<li>Galician</li>
-<li>Georgian</li>
-<li>German</li>
-<li>Greek</li>
-<li>Gujarati</li>
-<li>Haitian Creole</li>
-<li>Hausa</li>
-<li>Hawaiian</li>
-<li>Hebrew</li>
-<li>Hindi</li>
-<li>Hmong</li>
-<li>Hungarian</li>
-<li>Icelandic</li>
-<li>Igbo</li>
-<li>Indonesian</li>
-<li>Irish</li>
-<li>Italian</li>
-<li>Japanese</li>
-<li>Javanese</li>
-<li>Kannada</li>
-<li>Kazakh</li>
-<li>Khmer</li>
-<li>Korean</li>
-<li>Kurdish (Kurmanji)</li>
-<li>Kyrgyz</li>
-<li>Lao</li>
-<li>Latin</li>
-<li>Latvian</li>
-<li>Lithuanian</li>
-<li>Luxembourgish</li>
-<li>Macedonian</li>
-<li>Malagasy</li>
-<li>Malay</li>
-<li>Malayalam</li>
-<li>Maltese</li>
-<li>Maori</li>
-<li>Marathi</li>
-<li>Mongolian</li>
-<li>Myanmar (Burmese)</li>
-<li>Nepali</li>
-<li>Norwegian</li>
-<li>Pashto</li>
-<li>Persian</li>
-<li>Polish</li>
-<li>Portuguese</li>
-<li>Punjabi</li>
-<li>Romanian</li>
-<li>Russian</li>
-<li>Samoan</li>
-<li>Scots Gaelic</li>
-<li>Serbian</li>
-<li>Sesotho</li>
-<li>Shona</li>
-<li>Sindhi</li>
-<li>Sinhala</li>
-<li>Slovak</li>
-<li>Slovenian</li>
-<li>Somali</li>
-<li>Spanish</li>
-<li>Sundanese</li>
-<li>Swahili</li>
-<li>Swedish</li>
-<li>Tajik</li>
-<li>Tamil</li>
-<li>Telugu</li>
-<li>Thai</li>
-<li>Turkish</li>
-<li>Ukrainian</li>
-<li>Urdu</li>
-<li>Uzbek</li>
-<li>Vietnamese</li>
-<li>Welsh</li>
-<li>Xhosa</li>
-<li>Yiddish</li>
-<li>Yoruba</li>
-<li>Zulu</li> 
+            <li>Albanian</li>
+            <li>Amharic</li>
+            <li>Arabic</li>
+            <li>Armenian</li>
+            <li>Azerbaijani</li>
+            <li>Basque</li>
+            <li>Belarusian</li>
+            <li>Bengali</li>
+            <li>Bosnian</li>
+            <li>Bulgarian</li>
+            <li>Catalan</li>
+            <li>Cebuano</li>
+            <li>Chichewa</li>
+            <li>Chinese</li>
+            <li>Corsican</li>
+            <li>Croatian</li>
+            <li>Czech</li>
+            <li>Danish</li>
+            <li>Dutch</li>
+            <li>English</li>
+            <li>Esperanto</li>
+            <li>Estonian</li>
+            <li>Filipino</li>
+            <li>Finnish</li>
+            <li>French</li>
+            <li>Frisian</li>
+            <li>Galician</li>
+            <li>Georgian</li>
+            <li>German</li>
+            <li>Greek</li>
+            <li>Gujarati</li>
+            <li>Haitian Creole</li>
+            <li>Hausa</li>
+            <li>Hawaiian</li>
+            <li>Hebrew</li>
+            <li>Hindi</li>
+            <li>Hmong</li>
+            <li>Hungarian</li>
+            <li>Icelandic</li>
+            <li>Igbo</li>
+            <li>Indonesian</li>
+            <li>Irish</li>
+            <li>Italian</li>
+            <li>Japanese</li>
+            <li>Javanese</li>
+            <li>Kannada</li>
+            <li>Kazakh</li>
+            <li>Khmer</li>
+            <li>Korean</li>
+            <li>Kurdish (Kurmanji)</li>
+            <li>Kyrgyz</li>
+            <li>Lao</li>
+            <li>Latin</li>
+            <li>Latvian</li>
+            <li>Lithuanian</li>
+            <li>Luxembourgish</li>
+            <li>Macedonian</li>
+            <li>Malagasy</li>
+            <li>Malay</li>
+            <li>Malayalam</li>
+            <li>Maltese</li>
+            <li>Maori</li>
+            <li>Marathi</li>
+            <li>Mongolian</li>
+            <li>Myanmar (Burmese)</li>
+            <li>Nepali</li>
+            <li>Norwegian</li>
+            <li>Pashto</li>
+            <li>Persian</li>
+            <li>Polish</li>
+            <li>Portuguese</li>
+            <li>Punjabi</li>
+            <li>Romanian</li>
+            <li>Russian</li>
+            <li>Samoan</li>
+            <li>Scots Gaelic</li>
+            <li>Serbian</li>
+            <li>Sesotho</li>
+            <li>Shona</li>
+            <li>Sindhi</li>
+            <li>Sinhala</li>
+            <li>Slovak</li>
+            <li>Slovenian</li>
+            <li>Somali</li>
+            <li>Spanish</li>
+            <li>Sundanese</li>
+            <li>Swahili</li>
+            <li>Swedish</li>
+            <li>Tajik</li>
+            <li>Tamil</li>
+            <li>Telugu</li>
+            <li>Thai</li>
+            <li>Turkish</li>
+            <li>Ukrainian</li>
+            <li>Urdu</li>
+            <li>Uzbek</li>
+            <li>Vietnamese</li>
+            <li>Welsh</li>
+            <li>Xhosa</li>
+            <li>Yiddish</li>
+            <li>Yoruba</li>
+            <li>Zulu</li> 
         </ul> 
       </div>
-      
       </div>
       <div class="clearfix"></div>
-      
       <ul class="mobile-menu">
-        <li><a href="index.html">HOME</a></li>
-        <li><a href="products.html">PRODUCTS</a></li>
-        <li><a href="aboutus.html">ABOUT US</a></li>
-        <li><a href="contact.html">CONTACT</a></li>
-        <li><a href="add-product.html">ADD YOUR PRODUCT</a></li>
+        <li><a href="/">HOME</a></li>
+        <li><a href="/products">PRODUCTS</a></li>
+        <li><a href="/aboutus">ABOUT US</a></li>
+        <li><a href="/contact">CONTACT</a></li>
+        <li><a href="/add-product">ADD YOUR PRODUCT</a></li>
       </ul>
-      
     <div class="clearfix"></div>
       <ul class="share-icon">
             <li><a href="https://www.facebook.com/" target="new"><i class="fa fa-facebook-f"></i></a></li>
@@ -309,30 +208,21 @@
             <li><a href="https://plus.google.com/collections/featured" target="new"><i class="fa fa-google-plus"></i></a></li>
           </ul>
       <div class="clearfix"></div>
-      
       <div class="copyright">
         <p><a href="policy.html">Privacy.</a> <a href="terms.html">Term Of Usages.</a> <a href="usage.html">Accecptable Usage.</a></p>
       </div>
-      
     </div>
-  
-  
-  
-  <!--Desktop Header-->
-  
   <div class="header_section visible-mobile" id="show">
-  
-  <div class="products_banner"> <img src="images/product-details.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal"> </div>
+  <div class="products_banner"> <img src="../images/product-details.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal"> </div>
   <div class="logo_menu">
     <div class="container">
       <div class="row">
         <div class="col-sm-3 col-xs-4 top_logo">
-          <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal"></a></div>
+          <div class="logo"><a href="index.html"><img src="../images/logo.png" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal"></a></div>
         </div>
         <div class="col-sm-9 col-xs-8">
           <div class="col-lg-12 col-xs-12">
             <div class="curency_section">
-             
                 <ul>
                   <li>
                     <div class="dropdown">
@@ -350,147 +240,136 @@
                       <label><span class="color_curancy">Language : </span></label>
                       <button style="width: 74px;height: 34px;" class="btn btn-primary" type="button" data-toggle="dropdown" id="language_btn"><span id="language">ENGLISH</span> <span class="caret"></span></button>
                       <ul class="curencyOne l_asd new-lang">
-                        
                      <li>Afrikaans</li> 
-<li>Albanian</li>
-<li>Amharic</li>
-<li>Arabic</li>
-<li>Armenian</li>
-<li>Azerbaijani</li>
-<li>Basque</li>
-<li>Belarusian</li>
-<li>Bengali</li>
-<li>Bosnian</li>
-<li>Bulgarian</li>
-<li>Catalan</li>
-<li>Cebuano</li>
-<li>Chichewa</li>
-<li>Chinese</li>
-<li>Corsican</li>
-<li>Croatian</li>
-<li>Czech</li>
-<li>Danish</li>
-<li>Dutch</li>
-<li>English</li>
-<li>Esperanto</li>
-<li>Estonian</li>
-<li>Filipino</li>
-<li>Finnish</li>
-<li>French</li>
-<li>Frisian</li>
-<li>Galician</li>
-<li>Georgian</li>
-<li>German</li>
-<li>Greek</li>
-<li>Gujarati</li>
-<li>Haitian Creole</li>
-<li>Hausa</li>
-<li>Hawaiian</li>
-<li>Hebrew</li>
-<li>Hindi</li>
-<li>Hmong</li>
-<li>Hungarian</li>
-<li>Icelandic</li>
-<li>Igbo</li>
-<li>Indonesian</li>
-<li>Irish</li>
-<li>Italian</li>
-<li>Japanese</li>
-<li>Javanese</li>
-<li>Kannada</li>
-<li>Kazakh</li>
-<li>Khmer</li>
-<li>Korean</li>
-<li>Kurdish (Kurmanji)</li>
-<li>Kyrgyz</li>
-<li>Lao</li>
-<li>Latin</li>
-<li>Latvian</li>
-<li>Lithuanian</li>
-<li>Luxembourgish</li>
-<li>Macedonian</li>
-<li>Malagasy</li>
-<li>Malay</li>
-<li>Malayalam</li>
-<li>Maltese</li>
-<li>Maori</li>
-<li>Marathi</li>
-<li>Mongolian</li>
-<li>Myanmar (Burmese)</li>
-<li>Nepali</li>
-<li>Norwegian</li>
-<li>Pashto</li>
-<li>Persian</li>
-<li>Polish</li>
-<li>Portuguese</li>
-<li>Punjabi</li>
-<li>Romanian</li>
-<li>Russian</li>
-<li>Samoan</li>
-<li>Scots Gaelic</li>
-<li>Serbian</li>
-<li>Sesotho</li>
-<li>Shona</li>
-<li>Sindhi</li>
-<li>Sinhala</li>
-<li>Slovak</li>
-<li>Slovenian</li>
-<li>Somali</li>
-<li>Spanish</li>
-<li>Sundanese</li>
-<li>Swahili</li>
-<li>Swedish</li>
-<li>Tajik</li>
-<li>Tamil</li>
-<li>Telugu</li>
-<li>Thai</li>
-<li>Turkish</li>
-<li>Ukrainian</li>
-<li>Urdu</li>
-<li>Uzbek</li>
-<li>Vietnamese</li>
-<li>Welsh</li>
-<li>Xhosa</li>
-<li>Yiddish</li>
-<li>Yoruba</li>
-<li>Zulu</li> 
-
-
-
+                      <li>Albanian</li>
+                      <li>Amharic</li>
+                      <li>Arabic</li>
+                      <li>Armenian</li>
+                      <li>Azerbaijani</li>
+                      <li>Basque</li>
+                      <li>Belarusian</li>
+                      <li>Bengali</li>
+                      <li>Bosnian</li>
+                      <li>Bulgarian</li>
+                      <li>Catalan</li>
+                      <li>Cebuano</li>
+                      <li>Chichewa</li>
+                      <li>Chinese</li>
+                      <li>Corsican</li>
+                      <li>Croatian</li>
+                      <li>Czech</li>
+                      <li>Danish</li>
+                      <li>Dutch</li>
+                      <li>English</li>
+                      <li>Esperanto</li>
+                      <li>Estonian</li>
+                      <li>Filipino</li>
+                      <li>Finnish</li>
+                      <li>French</li>
+                      <li>Frisian</li>
+                      <li>Galician</li>
+                      <li>Georgian</li>
+                      <li>German</li>
+                      <li>Greek</li>
+                      <li>Gujarati</li>
+                      <li>Haitian Creole</li>
+                      <li>Hausa</li>
+                      <li>Hawaiian</li>
+                      <li>Hebrew</li>
+                      <li>Hindi</li>
+                      <li>Hmong</li>
+                      <li>Hungarian</li>
+                      <li>Icelandic</li>
+                      <li>Igbo</li>
+                      <li>Indonesian</li>
+                      <li>Irish</li>
+                      <li>Italian</li>
+                      <li>Japanese</li>
+                      <li>Javanese</li>
+                      <li>Kannada</li>
+                      <li>Kazakh</li>
+                      <li>Khmer</li>
+                      <li>Korean</li>
+                      <li>Kurdish (Kurmanji)</li>
+                      <li>Kyrgyz</li>
+                      <li>Lao</li>
+                      <li>Latin</li>
+                      <li>Latvian</li>
+                      <li>Lithuanian</li>
+                      <li>Luxembourgish</li>
+                      <li>Macedonian</li>
+                      <li>Malagasy</li>
+                      <li>Malay</li>
+                      <li>Malayalam</li>
+                      <li>Maltese</li>
+                      <li>Maori</li>
+                      <li>Marathi</li>
+                      <li>Mongolian</li>
+                      <li>Myanmar (Burmese)</li>
+                      <li>Nepali</li>
+                      <li>Norwegian</li>
+                      <li>Pashto</li>
+                      <li>Persian</li>
+                      <li>Polish</li>
+                      <li>Portuguese</li>
+                      <li>Punjabi</li>
+                      <li>Romanian</li>
+                      <li>Russian</li>
+                      <li>Samoan</li>
+                      <li>Scots Gaelic</li>
+                      <li>Serbian</li>
+                      <li>Sesotho</li>
+                      <li>Shona</li>
+                      <li>Sindhi</li>
+                      <li>Sinhala</li>
+                      <li>Slovak</li>
+                      <li>Slovenian</li>
+                      <li>Somali</li>
+                      <li>Spanish</li>
+                      <li>Sundanese</li>
+                      <li>Swahili</li>
+                      <li>Swedish</li>
+                      <li>Tajik</li>
+                      <li>Tamil</li>
+                      <li>Telugu</li>
+                      <li>Thai</li>
+                      <li>Turkish</li>
+                      <li>Ukrainian</li>
+                      <li>Urdu</li>
+                      <li>Uzbek</li>
+                      <li>Vietnamese</li>
+                      <li>Welsh</li>
+                      <li>Xhosa</li>
+                      <li>Yiddish</li>
+                      <li>Yoruba</li>
+                      <li>Zulu</li> 
                       </ul>
                     </div>
                   </li>
                 </ul>
-                
-                
-             
             </div>
           </div>
         </div>
         <div class="logo_row">
           <div class="col-xs-12 display_logo">
-            <div id="logo"><a href="index.html"><img src="images/logo.png" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal"></a></div>
+            <div id="logo"><a href="index.html"><img src="../images/logo.png" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal"></a></div>
           </div>
         </div>
         <div class="col-sm-9 col-xs-12 col-sm-offset-3">
           <div class="shadow_nav navbar-right">
             <nav class="navbar navbar-default"> 
-              
-              <!-- Brand and toggle get grouped for better mobile display -->
+               <!-- Brand and toggle get grouped for better mobile display --> 
               <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
               </div>
-              <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                  <li><a href="index.html" class="curent">HOME</a></li>
-                  <li><a href="products.html">PRODUCTS</a></li>
-                  <li><a href="aboutus.html">ABOUT US</a></li>
-                  <li><a href="add-product.html"><i class="fa fa-cart-plus"></i> ADD YOUR PRODUCT</a></li>
+                  <li><a href="/" class="curent">HOME</a></li>
+                  <li><a href="/products">PRODUCTS</a></li>
+                  <li><a href="/aboutus">ABOUT US</a></li>
+                  <li><a href=""><i class="fa fa-cart-plus"></i> ADD YOUR PRODUCT</a></li>
                 </ul>
               </div>
-              <!-- /.navbar-collapse --> 
-              <!-- /.container-fluid --> 
             </nav>
           </div>
         </div>
@@ -504,23 +383,17 @@
         <div class="col-sm-12">
           <div class="banner_find_heading">
             <h1>PRODUCT DETAILS<span></span> </h1>
-           
           </div>
         </div>
       </div>
     </div>
   </div>
   </div>
- 
 </div>
-
-  
-  
   <div class="detils-content">
   <div class="container">
     <div class="row">
       <div class="col-sm-5">
-        
          <div id="jssor_1" style="position: relative; margin: 0 auto; top: 0px; left: 0px; width: 800px; height: 456px; overflow: hidden; visibility: hidden; background-color: #fff;">
         <!-- Loading Screen -->
         <div data-u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -529,53 +402,53 @@
         </div>
         <div data-u="slides" style="cursor: default; position: relative; top: 0px; left: 0px; width: 800px; height: 356px; overflow: hidden;">
             <div data-p="144.50">
-                <img data-u="image" src="images/01.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-01.jpg" alt="image"/>
+                <img data-u="image" src="../images/01.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-01.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;" >
-                <img data-u="image" src="images/02.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-02.jpg" alt="image"/>
+                <img data-u="image" src="../images/02.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-02.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/03.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-03.jpg" alt="image"/>
+                <img data-u="image" src="../images/03.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-03.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/04.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-04.jpg" alt="image"/>
+                <img data-u="image" src="../images/04.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-04.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/05.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-05.jpg" alt="image"/>
+                <img data-u="image" src="../images/05.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-05.jpg" alt="image"/>
             </div>
             <a data-u="any" href="http://www.jssor.com" style="display:none">Image Gallery</a>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/06.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-06.jpg" alt="image"/>
+                <img data-u="image" src="../images/06.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-06.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/07.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-07.jpg" alt="image"/>
+                <img data-u="image" src="../images/07.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-07.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/08.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-08.jpg" alt="image"/>
+                <img data-u="image" src="../images/08.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-08.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/09.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-09.jpg" alt="image"/>
+                <img data-u="image" src="../images/09.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-09.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/10.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-10.jpg" alt="image"/>
+                <img data-u="image" src="../images/10.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-10.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/11.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-11.jpg" alt="image"/>
+                <img data-u="image" src="../images/11.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-11.jpg" alt="image"/>
             </div>
             <div data-p="144.50" style="display: none;">
-                <img data-u="image" src="images/12.jpg" alt="image"/>
-                <img data-u="thumb" src="images/thumb-12.jpg" alt="image"/>
+                <img data-u="image" src="../images/12.jpg" alt="image"/>
+                <img data-u="thumb" src="../images/thumb-12.jpg" alt="image"/>
             </div>
         </div>
         <!-- Thumbnail Navigator -->
@@ -596,18 +469,12 @@
 "><i class="fa fa-angle-left" aria-hidden="true"></i></span>
         <span data-u="arrowright" class="jssora05r rihgtarrow"><i class="fa fa-angle-right" aria-hidden="true"></i></span>
     </div>
-
-        
         <div class="slidertext">
-          <p>Yield: <span>£50,000</span></p>
-          <p>Launch Date: <span>08.08.2017</span></p>
-          <p>Completion Date:  <span>09.10.2017</span></p>
-          <p>Country: <span>United Kingdom</span></p>
+          <p>Yield: <span>{{$product->yield}}</span></p>
+          <p>Launch Date: <span>{{$product->launchdate}}</span></p>
+          <p>Completion Date:  <span><!-- {{$product->launchdate}} --></span></p>
+          <p>Country: <span>{{$product->country}}</span></p>
         </div>
-        
-        
-        
-        
       </div>
       <div class="col-sm-6 rightspacing">
         <h3>Grattan House</h3>
@@ -623,21 +490,12 @@
         <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
         
         <p class="purple">Exit Stratgy</p>
-        <p class="paddingNo">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
+        <p class="paddingNo">{{$product->strategy}}</p>
       </div>
       
     </div>
   </div>
   </div>
-  
-  
-  
-  
-    
-  
-  
-  
-  
   <div class="container">
   <h2 class="title-tag detiltag">GET IN TOUCH WITH US</h2>
   
@@ -683,13 +541,6 @@
     
     
   </div>
-  
-  
-  
-
-  <!--Desktop Header-->
-  
-
 <div class="products_sec pink-product">
   <div class="container-fluid">
     <div class="row">
@@ -699,279 +550,60 @@
         </div>
       </div>
     </div>
-    
-    
-    
-    
-    
-   
-  
-    
-    
-    
-    
   </div>
 </div>
-
-
-<!--PRODUCTS_SECTION-->
-
-
 <div class="for_product_page">
 <div class="products_sec pink-product">
-
 <div class="container-fluid">
-
 <div class="five_prod_column">
-
-
-
 <ul>
-<li class="product_col_first">
-<div class="productsoverly_relative">
-          <ul>
-          <li>
-<img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-<div class="product_content">
-<h4>Longside House</h4>
-<h6>Product Type (12)</h6>
-<span>£50,000</span>
-<span>Liverpool, England</span>
-<p>Lorem ipsum dolor sit ame a
-consetetur sadipscing elitr, sed
-diam nonumy eirmod tempor
-invidun labore dolore...
-<span>Added 04.10.2016</span>
-<span>Last edited 12:34 on 04.10.2016</span>
-</p>
-</div>
-
-</li> 
-</ul>
+@foreach($products   as $key => $products)
+    <li class="product_col_first">
+        <div class="productsoverly_relative">
+            <ul>
+                <li>
+                    <img src="../uploads/{{ $product->mainimage }}" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
+                    <div class="product_content">
+                    <h4>{{ $products->title }}</h4>
+                    <h6>{{ $products->type }}</h6>
+                    <span>{{ $products->price }}</span>
+                    <span>{{ $products->location }}, {{ $products->country }}</span>
+                    <p>{{ $products->description }}
+                    <span>Added {{ $products->created_at }}</span>
+                    <span>Last edited {{ $products->updated_at }}</span>
+                    </p>
+                    </div>
+                </li> 
+            </ul>
           <div class="products_main_overly">
          
-          <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-           
-          <div class="content_products_sec">
-          <div class="padding_div">
-          <h4>Grattan House</h4>
-          <span class="content_span">Bradford</span>
-          <span class="student_content">Student Apartments</span>
-          
-          <ul>
-<li>9% NET Rental Return</li>
-<li>3 Year Rental Assurance</li>
-<li>7% Interest on Deposit</li>
-<li>Completion Q2 2016</li>
-<li>Specialist Local Operator</li>
-<li>0.32 miles to University of Bradford</li>
-<li>0.24 miles to Bradford College</li>
-</ul> 
-<div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
+              <img src="../images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
+               
+              <div class="content_products_sec">
+                  <div class="padding_div">
+                      <h4>Grattan House</h4>
+                      <span class="content_span">Bradford</span>
+                      <span class="student_content">Student Apartments</span>
+                        <ul>
+                            <li>9% NET Rental Return</li>
+                            <li>3 Year Rental Assurance</li>
+                            <li>7% Interest on Deposit</li>
+                            <li>Completion Q2 2016</li>
+                            <li>Specialist Local Operator</li>
+                            <li>0.32 miles to University of Bradford</li>
+                            <li>0.24 miles to Bradford College</li>
+                        </ul>   
+                        <div class="product_overly_more"><a href="/productdetail/{{ $product->id }}" class="btn btn-warning btn-block">learn more</a></div>          
+                  </div>
+              </div>
           </div>
-          </div>
-          </div>
-        
-</div>
-</li>
-
-<li class="product_col_first">
-<div class="productsoverly_relative">
-          <ul>
-          <li>
-<img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-<div class="product_content">
-<h4>Longside House</h4>
-<h6>Product Type (12)</h6>
-<span>£50,000</span>
-<span>Liverpool, England</span>
-<p>Lorem ipsum dolor sit ame a
-consetetur sadipscing elitr, sed
-diam nonumy eirmod tempor
-invidun labore dolore...
-<span>Added 04.10.2016</span>
-<span>Last edited 12:34 on 04.10.2016</span>
-</p>
-</div>
-
-</li> 
-</ul>
-          <div class="products_main_overly">
-         
-          <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-           
-          <div class="content_products_sec">
-          <div class="padding_div">
-          <h4>Grattan House</h4>
-          <span class="content_span">Bradford</span>
-          <span class="student_content">Student Apartments</span>
-          
-         <ul>
-<li>9% NET Rental Return</li>
-<li>3 Year Rental Assurance</li>
-<li>7% Interest on Deposit</li>
-<li>Completion Q2 2016</li>
-<li>Specialist Local Operator</li>
-<li>0.32 miles to University of Bradford</li>
-<li>0.24 miles to Bradford College</li>
-</ul>
-<div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-          </div>
-          </div>
-          </div>
-        
-</div>
-</li>
-
-<li class="product_col_first">
-<div class="productsoverly_relative">
-          <ul>
-          <li>
-<img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-<div class="product_content">
-<h4>Longside House</h4>
-<h6>Product Type (12)</h6>
-<span>£50,000</span>
-<span>Liverpool, England</span>
-<p>Lorem ipsum dolor sit ame a
-consetetur sadipscing elitr, sed
-diam nonumy eirmod tempor
-invidun labore dolore...
-<span>Added 04.10.2016</span>
-<span>Last edited 12:34 on 04.10.2016</span>
-</p>
-</div>
-
-</li> 
-</ul>
-          <div class="products_main_overly">
-         
-          <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-           
-          <div class="content_products_sec">
-          <div class="padding_div">
-          <h4>Grattan House</h4>
-          <span class="content_span">Bradford</span>
-          <span class="student_content">Student Apartments</span>
-          
-        <ul>
-<li>9% NET Rental Return</li>
-<li>3 Year Rental Assurance</li>
-<li>7% Interest on Deposit</li>
-<li>Completion Q2 2016</li>
-<li>Specialist Local Operator</li>
-<li>0.32 miles to University of Bradford</li>
-<li>0.24 miles to Bradford College</li>
-</ul>
-<div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-          </div>
-          </div>
-          </div>
-        
-</div>
-</li>
-
-<li class="product_col_first">
-<div class="productsoverly_relative">
-          <ul>
-          <li>
-<img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-<div class="product_content">
-<h4>Longside House</h4>
-<h6>Product Type (12)</h6>
-<span>£50,000</span>
-<span>Liverpool, England</span>
-<p>Lorem ipsum dolor sit ame a
-consetetur sadipscing elitr, sed
-diam nonumy eirmod tempor
-invidun labore dolore...
-<span>Added 04.10.2016</span>
-<span>Last edited 12:34 on 04.10.2016</span>
-</p>
-</div>
-
-</li> 
-</ul>
-          <div class="products_main_overly">
-         
-          <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-           
-          <div class="content_products_sec">
-          <div class="padding_div">
-          <h4>Grattan House</h4>
-          <span class="content_span">Bradford</span>
-          <span class="student_content">Student Apartments</span>
-          
-         <ul>
-<li>9% NET Rental Return</li>
-<li>3 Year Rental Assurance</li>
-<li>7% Interest on Deposit</li>
-<li>Completion Q2 2016</li>
-<li>Specialist Local Operator</li>
-<li>0.32 miles to University of Bradford</li>
-<li>0.24 miles to Bradford College</li>
-</ul>
-<div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-          </div>
-          </div>
-          </div>
-        
-</div>
-</li>
-
-<li class="product_col_first">
-<div class="productsoverly_relative">
-          <ul>
-          <li>
-<img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-<div class="product_content">
-<h4>Longside House</h4>
-<h6>Product Type (12)</h6>
-<span>£50,000</span>
-<span>Liverpool, England</span>
-<p>Lorem ipsum dolor sit ame a
-consetetur sadipscing elitr, sed
-diam nonumy eirmod tempor
-invidun labore dolore...
-<span>Added 04.10.2016</span>
-<span>Last edited 12:34 on 04.10.2016</span>
-</p>
-</div>
-
-</li> 
-</ul>
-          <div class="products_main_overly">
-         
-          <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-           
-          <div class="content_products_sec">
-          <div class="padding_div">
-          <h4>Grattan House</h4>
-          <span class="content_span">Bradford</span>
-          <span class="student_content">Student Apartments</span>
-          
-         <ul>
-<li>9% NET Rental Return</li>
-<li>3 Year Rental Assurance</li>
-<li>7% Interest on Deposit</li>
-<li>Completion Q2 2016</li>
-<li>Specialist Local Operator</li>
-<li>0.32 miles to University of Bradford</li>
-<li>0.24 miles to Bradford College</li>
-</ul>
-<div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-          </div>
-          </div>
-          </div>
-        
-</div>
-</li>
-</ul>
-
-
-
-</div>
-</div></div>
+        </div>
+    </li>
+    @endforeach
+  </ul>
+  </div>
+  </div>
+  </div>
   </div>
   
   
@@ -1004,19 +636,6 @@ invidun labore dolore...
     </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="social_sec_bottom">
   <div class="container">
     <div class="row">
@@ -1048,241 +667,4 @@ invidun labore dolore...
     </div>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> 
-  
-  
-<script src="js/jquery-1.11.3.min.js"></script>
-   
-  <script src="js/autosearh.js"></script>
-  <script>
-  $( function() {
-    var availableTags = [
-      "ActionScript",
-      "AppleScript",
-      "Asp",
-      "BASIC",
-      "C",
-      "C++",
-      "Clojure",
-      "COBOL",
-      "ColdFusion",
-      "Erlang",
-      "Fortran",
-      "Groovy",
-      "Haskell",
-      "Java",
-      "JavaScript",
-      "Lisp",
-      "Perl",
-      "PHP",
-      "Python",
-      "Ruby",
-      "Scala",
-      "Scheme"
-    ];
-    $( "#tags" ).autocomplete({
-      source: availableTags
-    });
-  } );
-  </script>
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/owl.carousel.js"></script> 
-<script>
-$('.crou').owlCarousel({
-    loop:true,
-    nav:true,
-  autoplay: 3000,
-  items: 1,
-  dots : true,
-  nav : false,
-})    
-</script> 
-
-  
-   <!-- Load jQuery from CDN so can run demo immediately -->
-   
-    <script src="js/intlTelInput.js"></script>
-    <script>
-      $("#phone").intlTelInput({
-        //allowExtensions: true,
-        //autoFormat: false,
-        //autoHideDialCode: false,
-        //autoPlaceholder: false,
-        //defaultCountry: "auto",
-        // geoIpLookup: function(callback) {
-        //   $.get('http://ipinfo.io', function() {}, "jsonp").always(function(resp) {
-        //     var countryCode = (resp && resp.country) ? resp.country : "";
-        //     callback(countryCode);
-        //   });
-        // },
-        //nationalMode: false,
-        //numberType: "MOBILE",
-        //onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
-        //preferredCountries: ['cn', 'jp'],
-        utilsScript: "js/utils.js"
-      });
-    </script>
- <script type="text/javascript">
-    $("body").click(function() {
-    $(".curencyOne").hide();
-});
-
-$(".curencyOne").click(function(e) {
-    e.stopPropagation();
-});
-
-
-  </script>
-  
-  <script>
-
-    /*******************************
-* ACCORDION WITH TOGGLE ICONS
-*******************************/
-  function toggleIcon(e) {
-        $(e.target)
-            .prev('.panel-heading')
-            .find(".more-less")
-            .toggleClass('glyphicon-menu-down glyphicon-menu-up');
-    }
-    $('.panel-group').on('hidden.bs.collapse', toggleIcon);
-    $('.panel-group').on('shown.bs.collapse', toggleIcon);
-  
-  </script>
-  
-  <script>
-$(document).ready(function() {
-  //  var my = $(this).text()+""
-  $('#mks').text('$ USD');
-  $('#language').text('ENGLISH');
-  $('#shortGroup').text('Relevence');
-  $('#shortGroupp').text('Relevence');
-});
-
-
-
-$(document).on('click', '.currency_menu li a', function() {
-  //  var my = $(this).text()+""
-  $('#mks').text($(this).text());
-});
-
-$(document).on('click', '.language_menu li a', function() {
-  //  var my = $(this).text()+""
-  $('#language').text($(this).text());
-});
-
-$(document).on('click', '.shortGroup_menu li a', function() {
-  //  var my = $(this).text()+""
-  $('#shortGroup').text($(this).text());
-});
-
-$(document).on('click', '.shortGroup_menuu li a', function() {
-  //  var my = $(this).text()+""
-  $('#shortGroupp').text($(this).text());
-});
- </script>
-  
-  
-  <script>
-  
-  $(document).ready(function(){
-    
-  $(".navbar-toggle").click(function(){
-    $(".overly").css({"left": "0",});
-    $("#bottom-content").hide();
-  });
-    
-    $(".closed-sidebar").click(function(){
-      $(".overly").css({"left": "-769px", "transition": "all 0.4s",});
-      $("#bottom-content").show();
-    })
-    
-    $("#one").click(function(){
-      
-      $(".currency").slideToggle();
-    });
-    
-    $("#two").click(function(){
-      
-      $(".language").slideToggle();
-    });
-  
-  });
-    
-    $(document).on('click','.box .currency li',function(){
-    $("#one").text($(this).text());
-      $(".currency").hide();
-  });
-    
-    $(document).on('click','.box .language li',function(){
-    $("#two").text($(this).text());
-      $(".language").hide();
-  });
-    
-    $(document).on('click','#curency_btn',function(){
-      
-      $(".c_asd").toggle();
-      $(".l_asd").hide(); 
-     });
-    $(document).on('click','#language_btn',function(){
-      
-      $(".l_asd").toggle();
-      $(".c_asd").hide(); 
-     });
-     
-    
-    $(".l_asd").on('click','li',function (){
-        var s_text = $(this).text();
-      $(".l_asd").slideUp();
-      $('#language').text(s_text);
-      });
-    
-    $(".c_asd").on('click','li',function (){
-        var s_text = $(this).text();
-      $(".c_asd").slideUp();
-      $('#mks').text(s_text);
-      });
-     
-    
-    $(document).on('click','.c',function(){
-      $('#myModal').modal('show');
-      var mySrc = $(this).prev('.w').find('img').attr('src');
-      //alert(mySrc);
-       
-    var res = mySrc.substr(0, 7);
-   
-  var res2 = mySrc.substr(13, 6);
-      var imgNewValue = res+""+res2;
-      $("#replaceImg").attr('src',imgNewValue);
-      //alert("working");
-    });
-
-
-</script>
-
- <script type="text/javascript">
-    $("body").click(function() {
-    $(".curencyOne").hide();
-});
-
-$(".curencyOne").click(function(e) {
-    e.stopPropagation();
-});
-
-
-$(document).click(function(e) { 
-  
-    if(e.target.id != 'two') {
-        $(".language").hide();   
-    } 
-});
-   
-   $(document).click(function(e) { 
-  
-    if(e.target.id != 'one') {
-        $(".currency").hide();   
-    } 
-});
-
-  </script>
 @endsection

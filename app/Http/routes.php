@@ -20,18 +20,38 @@
 // PAGE ROUTE ALIASES
 
 
-Route::get('/', function () {
-    return view('index');
-});
-Route::get('/products', function () {
-    return view('products.product');
-});
+Route::get('/', 'ProductController@main');
+Route::get('/products', 'ProductController@products');
+Route::get('/productdetail/{id}', 'ProductController@productdetail');
+// Route::get('/admin', 'ProductController@index');
+// Route::get('/product/{id}', 'ProductController@edit');
+// Route::get('/delete', 'ProductController@destroy');
+// Route::post('/product/create', 'ProductController@store');
+// Route::post('/product/update/{id}', 'ProductController@update');
+// Route::get('/trueft', 'ProductController@create');
+// Route::get('/falseft', 'ProductController@remove');
+// Route::get('/featured', 'ProductController@featured');
+// Route::get('/remove', 'ProductController@remove');
+// Route::get('/call', 'ProductController@call');
+// Route::get('/calledit', 'ProductController@calledit');
+// Route::post('/call/{id}', 'ProductController@callupdate');
+// Route::post('banner/{id}', 'BannerController@update_avatar');
+// Route::get('/scrolleredit', 'BannerController@scrolleredit');
+// Route::post('/scroller/{id}', 'BannerController@scrollerupdate');
+
+// Route::get('/scroller', 'BannerController@index');
+// Route::get('/stat', 'ProductController@stat');
+// Route::get('/dellog', 'ProductController@stat_remove');
+// Route::get('/about', 'PageController@index');
+// Route::post('/about/edit', 'PageController@about');
+// Route::get('/terms', 'PageController@term');
+// Route::get('/privacy', 'PageController@privacy');
+// Route::get('/accep', 'PageController@accep');
 Route::get('/aboutus', function () {
     return view('aboutus');
 });
-Route::get('/admin', function () {
-    return view('admin.admin');
-});
+
+
 // ALL AUTHENTICATION ROUTES - HANDLED IN THE CONTROLLERS
 Route::controllers([
 	'auth' 		=> 'Auth\AuthController',
@@ -65,12 +85,34 @@ Route::get('reset', function () {
 
 // USER PAGE ROUTES - RUNNING THROUGH AUTH MIDDLEWARE
 Route::group(['middleware' => 'auth'], function () {
-
+		Route::get('/home', 'ProductController@index');
+		Route::get('/product/{id}', 'ProductController@edit');
+		Route::get('/delete', 'ProductController@destroy');
+		Route::post('/product/create', 'ProductController@store');
+		Route::post('/product/update/{id}', 'ProductController@update');
+		Route::get('/trueft', 'ProductController@create');
+		Route::get('/falseft', 'ProductController@remove');
+		Route::get('/featured', 'ProductController@featured');
+		Route::get('/remove', 'ProductController@remove');
+		Route::get('/call', 'ProductController@call');
+		Route::get('/calledit', 'ProductController@calledit');
+		Route::post('/call/{id}', 'ProductController@callupdate');
+		Route::post('banner/{id}', 'BannerController@update_avatar');
+		Route::get('/scrolleredit', 'BannerController@scrolleredit');
+		Route::post('/scroller/{id}', 'BannerController@scrollerupdate');
+		Route::get('/scroller', 'BannerController@index');
+		Route::get('/stat', 'ProductController@stat');
+		Route::get('/dellog', 'ProductController@stat_remove');
+		Route::get('/about', 'PageController@index');
+		Route::post('/about/edit', 'PageController@about');
+		Route::get('/terms', 'PageController@term');
+		Route::get('/privacy', 'PageController@privacy');
+		Route::get('/accep', 'PageController@accep');
 	// HOMEPAGE ROUTE
-	Route::get('/home', [
-	    'as' 		=> 'user',
-	    'uses' 		=> 'UserController@index'
-	]);
+	// Route::get('/home', [
+	//     'as' 		=> 'user',
+	//     'uses' 		=> 'UserController@index'
+	// ]);
 
 	// INCEPTIONED MIDDLEWARE TO CHECK TO ALLOW ACCESS TO CURRENT USER ONLY
 	Route::group(['middleware'=> 'currentUser'], function () {
@@ -120,16 +162,6 @@ Route::group(['middleware' => 'administrator'], function () {
 
 
 });
-
-// EDITOR ACCESS LEVEL PAGE ROUTES - RUNNING THROUGH EDITOR MIDDLEWARE
-Route::group(['middleware' => 'editor'], function () {
-
-	//TEST ROUTE ONLY
-	Route::get('editor', function () {
-	    echo 'Welcome to your EDITOR page '. Auth::user()->email .'.';
-	});
-
-});
 Route::get('/sign in', function () {
     return view('auth.login');
 });
@@ -140,6 +172,12 @@ Route::get('/sign in', function () {
 Route::get('/sign up', function () {
     return view('auth.register');
 });
+// Route::get('/sign up', function () {
+//     return view('auth.signup-influencer');
+// });
+// Route::get('/sign in', function () {
+//     return view('auth.login-influencer');
+// });
 // f
 //***************************************************************************************//
 //***************************** USER ROUTING EXAMPLES BELOW *****************************//

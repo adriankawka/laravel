@@ -453,6 +453,9 @@ body.body-small.fixed-sidebar.mini-navbar .navbar-static-side {
   display: block;
   height: auto;
 }
+.breadcrumb {
+  float: left;
+}
 body.fixed-sidebar.mini-navbar .navbar-default .nav > li > .nav-second-level li a {
   font-size: 12px;
   border-radius: 3px;
@@ -620,7 +623,7 @@ body.canvas-menu.mini-navbar nav.navbar-static-side {
   }
 }
 .btn {
-  border-radius: 3px;
+  /*border-radius: 3px;*/
 }
 .float-e-margins .btn {
   margin-bottom: 5px;
@@ -3472,10 +3475,13 @@ body.tour-open .animated {
 }
 body {
   font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #2f4050;
+  /*background-color: #2f4050;*/
   font-size: 13px;
   color: #676a6c;
   overflow-x: hidden;
+}
+#side-menu {
+  background-color: #2f4050;
 }
 html,
 body {
@@ -4967,7 +4973,7 @@ ul.notes li div {
 }
 .file {
   border: 1px solid #e7eaec;
-  padding: 0;
+  /*padding: 0;*/
   background-color: #ffffff;
   position: relative;
   margin-bottom: 20px;
@@ -8560,6 +8566,19 @@ body.md-skin {
   float: left;
   text-decoration: none;
 }
+.tablebutton  {
+  float: right;
+  
+}
+.tablebutton ul {
+  text-decoration: none;
+   margin-top: -20px;
+}
+.tablebutton ul li {
+  float: left;
+  text-decoration: none;
+  margin-left: 15px;
+}
 .modat-title {
   text-align: center;
   font-size: 22px;
@@ -8567,4 +8586,10 @@ body.md-skin {
 }
 .close {
   margin-top: -20px;
+}
+#call_modal {
+  height: 160px;
+}
+.product_edit {
+  float: right;
 }

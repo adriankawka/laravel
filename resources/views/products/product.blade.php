@@ -132,7 +132,7 @@
 				<li><a href="/products">PRODUCTS</a></li>
 				<li><a href="/aboutus">ABOUT US</a></li>
 				<li><a href="/contact">CONTACT</a></li>
-				<li><a href="/add-product">ADD YOUR PRODUCT</a></li>
+				<li><a href="">ADD YOUR PRODUCT</a></li>
 			</ul>
 			
 		  <div class="clearfix"></div>
@@ -437,802 +437,91 @@
         <div class="row"><div class="col-sm-12"><div class="products_heading"><h4>Featured products</h4></div></div></div>
         <div class="five_prod_column">
           <ul>
-             <li class="product_col_first">
-                 <div class="productsoverly_relative">
+              @foreach($products   as $key => $product)
+            <li class="product_col_first">
+                <div class="productsoverly_relative">
                     <ul>
-                      <li>
-                          <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                          <div class="product_content">
-                          <h4>Longside House</h4>
-                          <h6>Product Type (12)</h6>
-                          <span>£50,000</span>
-                          <span>Liverpool, England</span>
-                          <p>Lorem ipsum dolor sit ame a
-                          consetetur sadipscing elitr, sed
-                          diam nonumy eirmod tempor
-                          invidun labore dolore...
-                          <span>Added 04.10.2016</span>
-                          <span>Last edited 12:34 on 04.10.2016</span>
-                          </p>
-                          </div>
-
+                        <li>
+                            <img src="../uploads/{{ $product->mainimage }}" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
+                            <div class="product_content">
+                            <h4>{{ $product->title }}</h4>
+                            <h6>{{ $product->type }}</h6>
+                            <span>{{ $product->price }}</span>
+                            <span>{{ $product->location }}, {{ $product->country }}</span>
+                            <p>{{ $product->description }}
+                            <span>Added {{ $product->created_at }}</span>
+                            <span>Last edited {{ $product->updated_at }}</span>
+                            </p>
+                            </div>
                         </li> 
                     </ul>
-                    <div class="products_main_overly">
-                   
-                        <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                           
-                        <div class="content_products_sec">
+                  <div class="products_main_overly">
+                 
+                      <img src="../images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
+                       
+                      <div class="content_products_sec">
                           <div class="padding_div">
-                            <h4>Grattan House</h4>
-                            <span class="content_span">Bradford</span>
-                            <span class="student_content">Student Apartments</span>
-                            
-                            <ul>
-                                <li>9% NET Rental Return</li>
-                                <li>3 Year Rental Assurance</li>
-                                <li>7% Interest on Deposit</li>
-                                <li>Completion Q2 2016</li>
-                                <li>Specialist Local Operator</li>
-                                <li>0.32 miles to University of Bradford</li>
-                                <li>0.24 miles to Bradford College</li>
-                            </ul>
-                                   <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                          </div>
-                        </div>
-                  </div>
-              </div>
-          </li>
-
-          <li class="product_col_first">
-            <div class="productsoverly_relative">
-                <ul>
-                  <li>
-                    <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                    <div class="product_content">
-                    <h4>Longside House</h4>
-                    <h6>Product Type (12)</h6>
-                    <span>£50,000</span>
-                    <span>Liverpool, England</span>
-                    <p>Lorem ipsum dolor sit ame a
-                    consetetur sadipscing elitr, sed
-                    diam nonumy eirmod tempor
-                    invidun labore dolore...
-                    <span>Added 04.10.2016</span>
-                    <span>Last edited 12:34 on 04.10.2016</span>
-                    </p>
-                    </div>
-
-                  </li> 
-                </ul>
-                      <div class="products_main_overly">
-                     
-                        <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                                 
-                          <div class="content_products_sec">
-                              <div class="padding_div">
                               <h4>Grattan House</h4>
                               <span class="content_span">Bradford</span>
                               <span class="student_content">Student Apartments</span>
-                              
-                             <ul>
-                                <li>9% NET Rental Return</li>
-                                <li>3 Year Rental Assurance</li>
-                                <li>7% Interest on Deposit</li>
-                                <li>Completion Q2 2016</li>
-                                <li>Specialist Local Operator</li>
-                                <li>0.32 miles to University of Bradford</li>
-                                <li>0.24 miles to Bradford College</li>
-                             </ul>
-                                <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                              </div>
+                                <ul>
+                                    <li>9% NET Rental Return</li>
+                                    <li>3 Year Rental Assurance</li>
+                                    <li>7% Interest on Deposit</li>
+                                    <li>Completion Q2 2016</li>
+                                    <li>Specialist Local Operator</li>
+                                    <li>0.32 miles to University of Bradford</li>
+                                    <li>0.24 miles to Bradford College</li>
+                                </ul>   
+                                <div class="product_overly_more"><a href="/productdetail/{{ $product->id }}" class="btn btn-warning btn-block">learn more</a></div>          
                           </div>
                       </div>
                   </div>
+                </div>
             </li>
+            @endforeach
+        </ul>
+        </div>
+      </div></div>
+    </div>
+  <!-- <div class="extra-result">
+<div class="col-sm-6 col-xs-12">
+<div class="show_page_result">
+<span>Showing results</span> <span>1-15 of 86 products</span>
 
-            <li class="product_col_first">
-               <div class="productsoverly_relative">
-                  <ul>
-                  <li>
-                    <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                    <div class="product_content">
-                      <h4>Longside House</h4>
-                      <h6>Product Type (12)</h6>
-                      <span>£50,000</span>
-                      <span>Liverpool, England</span>
-                      <p>Lorem ipsum dolor sit ame a
-                      consetetur sadipscing elitr, sed
-                      diam nonumy eirmod tempor
-                      invidun labore dolore...
-                      <span>Added 04.10.2016</span>
-                      <span>Last edited 12:34 on 04.10.2016</span>
-                      </p>
-                    </div>
-
-                  </li> 
-                  </ul>
-                    <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                          <h4>Grattan House</h4>
-                          <span class="content_span">Bradford</span>
-                          <span class="student_content">Student Apartments</span>
-                          
-                         <ul>
-                            <li>9% NET Rental Return</li>
-                            <li>3 Year Rental Assurance</li>
-                            <li>7% Interest on Deposit</li>
-                            <li>Completion Q2 2016</li>
-                            <li>Specialist Local Operator</li>
-                            <li>0.32 miles to University of Bradford</li>
-                            <li>0.24 miles to Bradford College</li>
-                          </ul>
-                           <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                    </div>
-                  </div>
-              </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul> 
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-            	</ul>
+</div>
+</div>
 
 
+<div class="col-sm-6 col-xs-12">
+<div class="page_of_number_sec pull-right"> 
 
 
-            <ul>
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+     
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
 
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                    <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                    <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-            </ul>
-
-
-            	<ul>
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                    <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            <li class="product_col_first">
-            <div class="productsoverly_relative">
-                      <ul>
-                      <li>
-            <img src="images/product1.jpg" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-            <div class="product_content">
-            <h4>Longside House</h4>
-            <h6>Product Type (12)</h6>
-            <span>£50,000</span>
-            <span>Liverpool, England</span>
-            <p>Lorem ipsum dolor sit ame a
-            consetetur sadipscing elitr, sed
-            diam nonumy eirmod tempor
-            invidun labore dolore...
-            <span>Added 04.10.2016</span>
-            <span>Last edited 12:34 on 04.10.2016</span>
-            </p>
-            </div>
-
-            </li> 
-            </ul>
-                      <div class="products_main_overly">
-                     
-                      <img src="images/product_overly.jpg" class="img-responsive" alt="Portfolio Spotlight - global investment opportunity portal" title="Portfolio Spotlight - global investment opportunity portal">
-                       
-                      <div class="content_products_sec">
-                      <div class="padding_div">
-                      <h4>Grattan House</h4>
-                      <span class="content_span">Bradford</span>
-                      <span class="student_content">Student Apartments</span>
-                      
-                     <ul>
-            <li>9% NET Rental Return</li>
-            <li>3 Year Rental Assurance</li>
-            <li>7% Interest on Deposit</li>
-            <li>Completion Q2 2016</li>
-            <li>Specialist Local Operator</li>
-            <li>0.32 miles to University of Bradford</li>
-            <li>0.24 miles to Bradford College</li>
-            </ul>
-            <div class="product_overly_more"><a href="product-detail.html" class="btn btn-warning btn-block">learn more</a></div>          
-                      </div>
-                      </div>
-                      </div>
-                    
-            </div>
-            </li>
-
-            </ul>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </div>
-            </div></div>
-              </div>
-              
-              
-
-
-
-
-
-            <!--PRODUCTS_SECTION-->
-             
-
-            <div class="extra-result">
-
-
-            <div class="col-sm-6 col-xs-12">
-            <div class="show_page_result">
-            <span>Showing results</span> <span>1-15 of 86 products</span>
-
-            </div>
-            </div>
-
-
-            <div class="col-sm-6 col-xs-12">
-            <div class="page_of_number_sec pull-right"> 
-
-
-            <nav aria-label="Page navigation">
-              <ul class="pagination">
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                  </a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                 
-                <li class="page-item">
-                  <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-
-            </div>
-            </div>
-            	</div>
+</div>
+</div>
+	</div> -->
 
 
  
