@@ -237,6 +237,26 @@ class ProductController extends Controller
             ]
         );
     }
+        public function git_test(Request $request)
+    {
+        $id = $request->input('id');
+        $product = Product::find($id);
+        $product->visitor = '0';
+        $product->enquire = '0';
+        $product->save();
+    }
+
+     public function main_test()
+    {
+        $products = \DB::table('products')->where('featured', '1')->get();
+        $banners = banner::get();
+        return view('index', [
+            'products'=> $products,
+            'banners'=>  $banners         
+            ]
+        );
+    }
+
 
 
 }
